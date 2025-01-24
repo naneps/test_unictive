@@ -1,19 +1,27 @@
 import 'package:equatable/equatable.dart';
+import 'package:test_unictive/features/user/data/models/user_model.dart';
 
 class UserEntity extends Equatable {
-  final String id;
+  static const empty = UserEntity(id: 0, name: '', email: '');
+  final int id;
   final String name;
   final String email;
-  final String password;
-
+  final String? avatar;
   const UserEntity({
     required this.id,
     required this.name,
     required this.email,
-    required this.password,
+    this.avatar,
   });
 
+  factory UserEntity.fromModel(UserModel model) {
+    return UserEntity(
+      id: model.id,
+      name: '${model.firstName} ${model.lastName}',
+      email: model.email,
+      avatar: model.avatar,
+    );
+  }
   @override
-  // TODO: implement props
-  List<Object?> get props => [id, name, email, password];
+  List<Object?> get props => [id, name, email];
 }
