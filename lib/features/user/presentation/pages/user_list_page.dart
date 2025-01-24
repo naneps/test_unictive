@@ -50,7 +50,10 @@ class UserListPage extends StatelessWidget {
                       final user = state.users[index];
                       return FadeInWrapper(
                         delay: (index * 100).clamp(0, 500),
-                        child: UserWidget(user: user),
+                        child: Hero(
+                          tag: user.id.toString(),
+                          child: UserWidget(user: user),
+                        ),
                       );
                     },
                   );

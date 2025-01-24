@@ -36,9 +36,12 @@ class UserDetailPage extends StatelessWidget {
                 return Center(
                   child: Container(
                     decoration: BoxDecoration(),
-                    child: UserWidget(
-                      user: user,
-                      showButtonDetail: false,
+                    child: Hero(
+                      tag: user.id.toString(),
+                      child: UserWidget(
+                        user: user,
+                        showButtonDetail: false,
+                      ),
                     ),
                   ),
                 );

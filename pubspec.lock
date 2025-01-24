@@ -323,10 +323,9 @@ packages:
   http_api_service:
     dependency: "direct main"
     description:
-      name: http_api_service
-      sha256: "259a22404e19131f6df8b1ed093ce849e6e2b03d10df723ba5e7e19d2c0e888f"
-      url: "https://pub.dev"
-    source: hosted
+      path: "packages/http_api_service"
+      relative: true
+    source: path
     version: "1.0.4"
   http_multi_server:
     dependency: transitive
